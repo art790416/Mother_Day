@@ -1,0 +1,152 @@
+html {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Noto Serif TC', serif;
+    color: #633cba;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    img {
+        display: block;
+        width: 100%;
+        vertical-align: bottom;
+    }
+    .choice {
+        display: flex;
+        a {
+            display: block;
+            position: relative;
+            width: 33.33%;
+            margin-bottom: -0.5%;
+            .finger {
+                width: 38%;
+                position: absolute;
+                top: 25%;
+                right: 2%;
+            }
+        }
+    }
+    .FV {
+        position: relative;
+        .FV_up {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+        .FV_down01 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: rotation 10s linear infinite;
+            z-index: 1;
+        }
+        .FV_down02 {
+            position: absolute;
+            bottom: 2.8%;
+            left: 0;
+            z-index: 2;
+        }
+    }
+    .hukidasi {
+        position: relative;
+        .hukidasi01 {
+            width: 38%;
+            position: absolute;
+            top: 30%;
+            right: 10%;
+        }
+        .hukidasi02 {
+            width: 48%;
+            position: absolute;
+            bottom: 23%;
+            left: 5%;
+        }
+        .font {
+            width: 100%;
+            position: absolute;
+            bottom: 0%;
+            right: 5%;
+        }
+        p {
+            font-size: 3.5rem;
+            line-height: 4.5rem;
+            text-align: right;
+            margin: 3.5rem 3rem;
+            letter-spacing: 0.2rem;
+        }
+        mark {
+            background-color: transparent;
+            color: inherit;
+            background-image: linear-gradient(#ffdc3f, #ffdc3f);
+            background-repeat: no-repeat;
+            background-size: 0% 50%;
+            background-position: 0 100%;
+        }
+        mark.animate {
+            animation: 3s fontline ease-in-out forwards;
+            animation-delay: 4s;
+        }
+    }
+    .down_place {
+        position: relative;
+        .down {
+            width: 25%;
+            position: absolute;
+            top: 30%;
+            left: 37%;
+            transform: translate(-50%, -50%);
+            animation: down 2s infinite;
+        }
+    }
+    .offer_btn {
+        position: relative;
+        .btn_front {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    @-webkit-keyframes rotation {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    @keyframes fontline {
+        to {
+            background-size: 100% 50%;
+        }
+    }
+    @keyframes down {
+        0% {
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+        50% {
+            -webkit-transform: translate(0, 12px);
+            transform: translate(0, 12px);
+        }
+        100% {
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .content .hukidasi p {
+        font-size: 5vw;
+        line-height: 6.8vw;
+        margin: 7% 5%;
+    }
+}
