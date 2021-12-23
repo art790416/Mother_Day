@@ -1,12 +1,12 @@
 html {
     padding: 0;
     margin: 0;
-    font-size: 16px;
+    // font-size: 16px;
 }
 
 body {
-    font-family: 'Noto Serif TC', serif;
-    color: #633cba;
+    // font-family: 'Noto Serif TC', serif;
+    // color: #633cba;
 }
 
 .content {
@@ -20,17 +20,19 @@ body {
     }
     .choice {
         display: flex;
-        a {
+        .choice_btn {
             display: block;
             position: relative;
-            width: 33.33%;
-            margin-bottom: -0.5%;
+            width: 33.4%;
             .finger {
                 width: 38%;
                 position: absolute;
                 top: 25%;
                 right: 2%;
             }
+        }
+        .choice_center {
+            width: 33.2%;
         }
     }
     .FV {
@@ -43,8 +45,9 @@ body {
         }
         .FV_down01 {
             position: absolute;
-            bottom: 0;
-            left: 0;
+            width: 110%;
+            bottom: -3%;
+            right: -5%;
             animation: rotation 10s linear infinite;
             z-index: 1;
         }
@@ -76,6 +79,8 @@ body {
             right: 5%;
         }
         p {
+            font-family: 'Noto Serif TC', serif;
+            color: #633cba;
             font-size: 3.5rem;
             line-height: 4.5rem;
             text-align: right;
@@ -92,7 +97,7 @@ body {
         }
         mark.animate {
             animation: 3s fontline ease-in-out forwards;
-            animation-delay: 4s;
+            animation-delay: 3s;
         }
     }
     .down_place {
@@ -112,6 +117,41 @@ body {
             position: absolute;
             top: 0;
             left: 0;
+        }
+        .btn_last {
+            width: 76%;
+            position: absolute;
+            top: 38%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .light {
+            position: absolute;
+            top: 46%;
+            left: 50.5%;
+            transform: translate(-50%, -50%);
+            /* ↓閃光在一範圍內跑的寬與高↓ */
+            width: 85%;
+            height: 86%;
+            margin: 0 auto;
+            border-radius: 0 0 20px 20px;
+            /* ↑閃光在一範圍內跑的寬與高↑ */
+            overflow: hidden;
+        }
+        .light::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 84%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: url(../img/light.png) no-repeat center;
+            background-size: 100%;
+            animation: btn 3.5s infinite ease-in-out;
+            /* ↓調整閃光透明度↓ */
+            opacity: 0.8;
+            /* ↑調整閃光透明度↑ */
         }
     }
     @-webkit-keyframes rotation {
@@ -139,6 +179,15 @@ body {
         100% {
             -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
+        }
+    }
+    @keyframes btn {
+        0% {
+            left: -300%;
+            // left: 0%;
+        }
+        100% {
+            left: 100%;
         }
     }
 }
